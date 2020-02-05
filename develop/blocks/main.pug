@@ -1,0 +1,21 @@
+block variables
+
+doctype html
+html(lang='en')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1.0')
+		meta(http-equiv='X-UA-Compatible' content='ie=edge')
+
+		<!-- inject:head:favicons -->
+		<!-- endinject -->
+
+		title= pageTitle ? pageTitle : 'New Document'
+		link(rel='stylesheet' href=`./css/${style}.css`)
+
+	body
+		include header-page/header-page
+		block content
+		include footer/footer
+		block scripts
+		block svg

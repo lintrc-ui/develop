@@ -1,0 +1,82 @@
+.theme-button
+	display: inline-flex
+	flex-flow: row nowrap
+	justify-content: flex-start
+	align-items: center
+	cursor: pointer
+	user-select: none
+
+.theme-button__label
+	cursor: pointer
+	white-space: nowrap
+	color: inherit
+
+.theme-button__base
+	display: flex
+	cursor: pointer
+	margin: 0 .55em
+	width: 33px
+	height: 20px
+	border-radius: 10px
+	border: 1px solid $border_dark
+	background: lighten($secondary_bg_dark, 5%)
+	background-repeat: no-repeat
+	background-origin: border-box
+	transition: background .2s ease
+
+.theme-button__lever
+	display: block
+	width: 18px
+	height: 18px
+	border-radius: 50%
+	border: .5px solid $border_light
+	background: $primary_bg_light
+	box-shadow: 0 1px 1px $secondary_fg_light
+	transform: translate(0, 0)
+	transition: transform .2s ease
+
+.theme-button__check:checked + .theme-button__base
+	background: $vibrant_gradient_135deg
+
+	.theme-button__lever
+		transform: translate(13px, 0)
+
+
+// > 1024px
+@media #{$tablet_large}
+	.theme-button
+		display: none
+
+// > 1920px
+@media #{$desktop_large}
+	.theme-button
+		display: inline-flex
+
+	.theme-button__check:checked + .theme-button__base .theme-button__lever
+		transform: translate(16px, 0)
+
+	.theme-button__base
+		width: 40px
+		height: 24px
+		border-radius: 12px
+		border: 2px solid $border_dark
+
+	.theme-button__lever
+		width: 20px
+		height: 20px
+		border: 1px solid $border_light
+		box-shadow: 0 2px 2px $secondary_fg_light
+
+// > 2560px
+@media #{$desktop_xlarge}
+	.theme-button__check:checked + .theme-button__base .theme-button__lever
+		transform: translate(18px, 0)
+
+	.theme-button__base
+		width: 46px
+		height: 28px
+		border-radius: 14px
+
+	.theme-button__lever
+		width: 24px
+		height: 24px

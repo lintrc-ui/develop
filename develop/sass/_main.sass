@@ -1,0 +1,125 @@
+@import '../fonts/fonts'
+
+// Подключается к body при прокрутке страницы и отключает все hover эффекты для ускорения обработки страницы
+.disable-hover
+	pointer-events: none
+
+// Text Selection
+::selection
+	color: $selected_fg
+	background-color: $accent
+
+// Scrollbar
+// Ширина
+::-webkit-scrollbar
+	width: .6em
+
+// Ползунок
+::-webkit-scrollbar-thumb
+	border-radius: .3em
+	background: transparentize($accent, .4)
+
+// Ползунок при наведении
+::-webkit-scrollbar-thumb:hover
+	background: $accent
+
+// Дорожка для ползунка
+::-webkit-scrollbar-track
+	background: $primary_bg_dark
+	box-shadow: inset 0 0 5px transparentize($primary_fg_dark, .7)
+
+// Угол пересечения горизонтального и вертикального скролбара
+::-webkit-scrollbar-corner
+	background: $primary_bg_dark
+
+*:focus
+	outline: none
+
+*,
+*:after,
+*:before
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+// Links in text
+*:link, *:visited, a
+	text-decoration: none
+	color: currentColor
+
+// наследование всех свойств шрифта
+input,
+textarea,
+select,
+button
+	font: inherit
+	color: #f00
+
+// скрытие input`ов
+.visually-hidden
+	position: absolute
+	width: 1px
+	height: 1px
+	margin: -1px
+	border: 0
+	padding: 0
+	white-space: nowrap
+	clip-path: inset(100%)
+	clip: rect(0 0 0 0)
+	overflow: hidden
+
+html
+	width: 100%
+	height: 100%
+
+body
+	position: relative
+	display: flex
+	flex-flow: column nowrap
+	justify-content: flex-start
+	align-items: center
+	width: 100%
+	min-height: 100vh
+	font-family: 'Roboto', sans-serif
+	font-weight: 400
+	font-style: normal
+	font-variant: normal
+	font-size: $base_fontSize * .9
+	line-height: 1.5
+	letter-spacing: .2px
+	text-transform: none
+	color: $primary_fg_dark
+	overflow-x: hidden
+
+// > 1024px
+@media #{$tablet_large}
+	body
+		font-size: $base_fontSize * .95
+
+// > 1366px
+@media #{$desktop_medium}
+	body
+		font-size: $base_fontSize
+
+// > 1920px
+@media #{$desktop_large}
+	body
+		font-size: $base_fontSize * 1.2
+
+// > 2560px
+@media #{$desktop_xlarge}
+	body
+		font-size: $base_fontSize * 1.4
+
+pre code,
+code
+	font-family: 'JetBrains Mono', monospace
+	font-size: 1em
+	font-weight: 400
+
+code
+	padding: 2px 4px
+	border-radius: 4px
+	border: 1px solid $border_dark
+	background: $primary_bg_dark
+	box-shadow: 0 1px 5px $border_dark

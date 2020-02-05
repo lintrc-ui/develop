@@ -1,0 +1,7 @@
+mixin themeButton(wrapClass, elemID)
+	.theme-button(class=wrapClass)
+		label.theme-button__label(for=elemID) Dark mode
+
+		input.visually-hidden.theme-button__check(id=elemID type='checkbox' checked)
+		label.theme-button__base(for=elemID)
+			span.theme-button__lever

@@ -1,0 +1,79 @@
+@import 'variables'
+@import 'main'
+@import '../blocks/header-page/header-page'
+@import '../blocks/tab-cards/tab-cards'
+
+.main-page
+	position: relative
+	flex: 1
+	padding-bottom: 3em
+	width: 100%
+	color: $primary_fg_dark
+	background: $primary_bg_dark
+	overflow: hidden
+
+.about
+	display: flex
+	flex-flow: column nowrap
+	justify-content: center
+	align-items: center
+	padding: 3em 8%
+	width: 100%
+	height: 100vh
+	background: linear-gradient(to bottom, transparentize($secondary_bg_dark, .2), transparentize($secondary_bg_dark, .05)), url('https://d3irk3g7luh32r.cloudfront.net/wp-content/uploads/sites/5/2017/12/20170301155447.jpg') no-repeat fixed center /cover
+
+.about__title
+	margin-bottom: 20px
+	font-size: 4em
+	font-weight: 700
+	line-height: 1.25
+	letter-spacing: .05em
+	text-transform: uppercase
+	text-align: center
+	text-shadow: 1px 2px 4px $primary_bg_dark, 0 0 2px $primary_fg_dark
+
+.about__text
+	margin-bottom: .7em
+	font-size: 1em
+	font-weight: 400
+	font-variant: normal
+	letter-spacing: .2px
+	line-height: 1.6
+	text-transform: none
+	color: $secondary_fg_dark
+
+.about-lint
+	margin: auto
+	padding: 5em 4% 2em
+	width: 100%
+
+.about-lint__title
+	margin-bottom: .5em
+	font-size: 2.4em
+	font-weight: 500
+	line-height: 1.25
+
+
+// > 1366px
+@media #{$desktop_medium}
+	.about
+		padding: 3em 12%
+
+	.about-lint
+		padding: 5em 8% 2em
+
+// > 1920px
+@media #{$desktop_large}
+	.about
+		padding: 3em 18%
+
+	.about-lint
+		padding: 5em 12% 2em
+
+// > 2560px
+@media #{$desktop_xlarge}
+	.about
+		padding: 3em 24%
+
+	.about-lint
+		padding: 5em 18% 2em

@@ -1,0 +1,110 @@
+ul.tabs
+	li.tabs__list
+		span.tabs__main-link.tabs__main-link--active
+			img.tabs__logo(src='./img/logo-editorconfig.png' alt='editorconfig logo')
+			| EditorConfig
+
+		span.tabs__main-link
+			img.tabs__logo(src='./img/logo-pug.svg' alt='Pug logo')
+			| Pug Lint
+
+		span.tabs__main-link
+			img.tabs__logo(src='./img/logo-htmlhint.png' alt='HTMLHint logo')
+			| HTMLHint
+
+		span.tabs__main-link
+			img.tabs__logo(src='./img/logo-sass.svg' alt='Sass logo')
+			| Sass Lint
+
+		span.tabs__main-link
+			svg.tabs__logo #[use(xlink:href="#logo_stylelint")]
+			| stylelint
+
+		span.tabs__main-link
+			img.tabs__logo(src='./img/logo-eslint.svg' alt='ESLint logo')
+			| ESLint
+
+
+
+	li.tabs__content.tabs__content--active
+		span.tabs__inline-link.tabs__inline-link--active
+			img.tabs__logo-inline(src='./img/logo-editorconfig.png' alt='editorconfig logo')
+			| EditorConfig
+
+		.tabs__wrap
+			h2.tabs__title About
+			p.tabs__text EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs.
+
+			h2.tabs__title Configuration file
+			p.tabs__text For configuration, the #[code .editorconfig] file is used, which should be located in the root directory of the project.
+			p.tabs__text For more information, visit the #[a.tabs__link(href='https://editorconfig.org' target='_blank') official website] of the EditorConfig project.
+
+
+	li.tabs__content
+		span.tabs__inline-link
+			img.tabs__logo-inline(src='./img/logo-pug.svg' alt='Pug logo')
+			| Pug Lint
+
+		.tabs__wrap
+			h2.tabs__title About
+			p.tabs__text An unopinionated and configurable linter and style checker for Pug (formerly Jade).
+
+			h2.tabs__title Configuration file
+			p.tabs__text For configuration, the #[code .pug-lintrc.json] file is used, which should be located in the root directory of the project.
+			p.tabs__text For more information, visit the #[a.tabs__link(href='https://github.com/pugjs/pug-lint' target='_blank') official website] of the pug-lint project.
+
+
+	li.tabs__content
+		span.tabs__inline-link
+			img.tabs__logo-inline(src='./img/logo-htmlhint.png' alt='HTMLHint logo')
+			| HTMLHint
+
+		.tabs__wrap
+			h2.tabs__title About
+			p.tabs__text HTMLHint is a Static Code Analysis Tool for HTML, you can use it with IDE or in build system..
+
+			h2.tabs__title Configuration file
+			p.tabs__text For configuration, the #[code .htmlhintrc] file is used, which should be located in the root directory of the project.
+			p.tabs__text For more information, visit the #[a.tabs__link(href='https://htmlhint.com' target='_blank') official website] of the HTMLHint project.
+
+
+	li.tabs__content
+		span.tabs__inline-link
+			img.tabs__logo-inline(src='./img/logo-sass.svg' alt='Sass logo')
+			| Sass Lint
+
+		.tabs__wrap
+			h2.tabs__title About
+			p.tabs__text A Node-only Sass linter for both sass and scss syntax!
+
+			h2.tabs__title Configuration file
+			p.tabs__text For configuration, the #[code .sasslintrc] file is used, which should be located in the root directory of the project.
+			p.tabs__text For more information, visit the #[a.tabs__link(href='https://github.com/sasstools/sass-lint/tree/master' target='_blank') official website] of the Sass Lint project.
+
+
+	li.tabs__content
+		span.tabs__inline-link
+			svg.tabs__logo-inline #[use(xlink:href="#logo_stylelint")]
+			| stylelint
+
+		.tabs__wrap
+			h2.tabs__title About
+			p.tabs__text A mighty, modern linter that helps you avoid errors and enforce conventions in your styles.
+
+			h2.tabs__title Configuration file
+			p.tabs__text For configuration, the #[code .stylelintrc.json] file is used, which should be located in the root directory of the project.
+			p.tabs__text For more information, visit the #[a.tabs__link(href='https://stylelint.io' target='_blank') official website] of the stylelint project.
+
+
+	li.tabs__content
+		span.tabs__inline-link
+			img.tabs__logo-inline(src='./img/logo-eslint.svg' alt='ESLint logo')
+			| ESLint
+
+		.tabs__wrap
+			h2.tabs__title About
+			p.tabs__text ESLint is an open source JavaScript linting utility.
+
+			h2.tabs__title Configuration file
+			p.tabs__text For configuration, the #[code .eslintrc.json] file is used, which should be located in the root directory of the project.
+			p.tabs__text For more information, visit the #[a.tabs__link(href='https://eslint.org' target='_blank') official website] of the ESLint project.

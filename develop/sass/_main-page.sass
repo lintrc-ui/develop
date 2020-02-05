@@ -1,0 +1,23 @@
+.main-page
+	position: relative
+	flex: 1
+	padding: 3em 4%
+	width: 100%
+	color: $primary_fg_dark
+	background: $primary_bg_dark
+	overflow: hidden
+
+// > 1366px
+@media #{$desktop_medium}
+	.main-page
+		padding: 3em 8%
+
+// > 1920px
+@media #{$desktop_large}
+	.main-page
+		padding: 3em 12%
+
+// > 2560px
+@media #{$desktop_xlarge}
+	.main-page
+		padding: 3em 18%

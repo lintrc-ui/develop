@@ -1,0 +1,206 @@
+@import '../theme-button/theme-button'
+@import '../social/social'
+
+.menu
+	display: flex
+	justify-content: center
+	align-items: center
+
+.menu__wrap-icon,
+.menu__close
+	position: relative
+	display: inline-flex
+	cursor: pointer
+	width: 2em
+	height: 2em
+
+.menu__close
+	align-self: flex-end
+	margin-top: .3em
+	margin-right: calc(100vw * .03)
+	padding: .3em
+
+.menu__img
+	fill: currentColor
+	transition: color .2s ease
+
+.menu__icon
+	display: inline-flex
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	width: 100%
+	height: 4px
+	border-radius: 2px
+	background: currentColor
+
+	&:before,
+	&:after
+		content: ''
+		position: absolute
+		right: 0
+		width: 100%
+		height: 4px
+		border-radius: 2px
+		background: currentColor
+		transition: transform .3s, top .3s
+
+	&:before
+		top: -.625em
+
+	&:after
+		top: .625em
+
+.menu__check:checked ~ .menu__wrap-icon .menu__icon
+	background: transparentize($primary_fg_dark, 1)
+
+	&:before
+		top: 0
+		transform: rotate(135deg)
+
+	&:after
+		top: 0
+		transform: rotate(225deg)
+
+.menu__check:checked ~ .menu__wrap
+	opacity: 1
+	transform: translateX(0)
+
+.menu__wrap
+	position: fixed
+	top: 0
+	right: 0
+	display: flex
+	flex-flow: column nowrap
+	justify-content: flex-start
+	align-items: center
+	opacity: 0
+	width: 280px
+	height: 100vh
+	font-size: 1.1em
+	font-weight: 400
+	line-height: 1.5
+	border-radius: 4px
+	border: 1px solid transparent
+	border-top-color: transparentize($primary_bg_dark, .1)
+	border-bottom-color: transparentize($primary_fg_dark, .9)
+	background-color: transparentize($primary_bg_dark, .04)
+	box-shadow: 0 19px 38px transparentize($primary_fg_dark, .85), 0 15px 12px transparentize($primary_fg_dark, .93)
+	transition: opacity .3s ease, transform .3s ease
+	transform: translateX(100%)
+	overflow: hidden
+	z-index: 100
+
+	@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none)
+		background-color: transparentize($secondary_bg_dark, .2)
+		backdrop-filter: blur(25px)
+		-webkit-backdrop-filter: blur(25px)
+
+.menu__list
+	display: flex
+	flex-flow: column nowrap
+	justify-content: center
+	align-items: center
+	width: 100%
+
+.menu__item
+	cursor: pointer
+	padding: .75em 1.6em
+	width: 100%
+	white-space: nowrap
+	border-bottom: .5px solid $border_dark
+
+	&:hover
+		color: $accent
+		background: transparentize($accent, .96)
+
+
+.menu__theme-button
+	padding: .75em 1.6em
+	width: 100%
+	border-bottom: .5px solid $border_dark
+
+.menu__social
+	margin: 0
+	padding: .75em 1.6em
+	width: 100%
+
+
+// горизонтальная ориентация экрана в мобильном
+@media screen and (max-height: 320px)
+	.menu__item
+		padding: .5em 1.6em
+
+	.menu__theme-button
+		padding: .5em 1.6em
+
+	.menu__social
+		padding: .5em 1.6em
+
+// > 1024px
+@media #{$tablet_large}
+	.menu__check,
+	.menu__wrap-icon,
+	.menu__close
+		display: none
+
+	.menu__wrap
+		position: relative
+		top: 0
+		right: 0
+		flex-flow: row nowrap
+		justify-content: flex-end
+		opacity: 1
+		width: auto
+		height: auto
+		border-radius: 0
+		border: none
+		background: none
+		box-shadow: none
+		backdrop-filter: none
+		transform: translateY(0)
+
+	.menu__list
+		display: inline-flex
+		flex-flow: row nowrap
+		text-align: center
+
+		&:after
+			content: ''
+			display: inline-flex
+			margin: auto .75em
+			width: 1px
+			height: 1.5em
+			background: $border_dark
+
+	.menu__item
+		padding: 0 .75em
+		width: auto
+		border-radius: 2px
+		border: none
+		background: none
+
+		&:hover
+			color: $accent
+			background: transparentize($accent, .96)
+
+	.menu__theme-button
+		padding: 0 .75em
+		width: auto
+		border: none
+
+	.menu__theme-button:after
+		content: ''
+		margin-left: .75em
+		width: 2px
+		height: 1.5em
+		background: $border_dark
+
+	.menu__social
+		padding: 0
+		width: auto
+
+@media screen and (min-width: 1440px)
+	.menu__theme-button
+		display: inline-flex

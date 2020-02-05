@@ -1,0 +1,26 @@
+extends ../blocks/main
+
+block variables
+	- const pageTitle = 'LintRC UI | Home'
+	- const style = 'index.min'
+
+block content
+	main.main-page
+		section.about
+			h1.about__title Visual configuration of code linters
+			p.about__text This resource was created to simplify customization of popular code linters among developers. To facilitate and speed up the process, all settings are divided into logical sections and have a visual display of the applicable rules.
+			p.about__text Code linting is a type of static analysis that is frequently used to find problematic patterns or code that doesn't adhere to certain style guidelines. There are code linters for most programming languages, and compilers sometimes incorporate linting into the compilation process.
+
+		section.about-lint
+			h2.about-lint__title Basic information about the presented linters
+			include ../blocks/tab-cards/tab-cards
+
+block scripts
+	script(src="./js/index-common.min.js")
+
+block svg
+	svg(style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg")
+		include ../blocks/svg/logo
+		include ../blocks/svg/close
+		include ../blocks/svg/github
+		include ../blocks/svg/logo-stylelint
