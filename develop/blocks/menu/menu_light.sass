@@ -1,0 +1,42 @@
+.is_light
+
+	.menu__check:checked ~ .menu__wrap-icon .menu__icon
+		background: transparentize($primary_fg_light, 1)
+
+	.menu__wrap
+		border-top-color: transparentize($primary_bg_light, .1)
+		border-bottom-color: transparentize($primary_fg_light, .9)
+		background-color: transparentize($primary_bg_light, .04)
+		box-shadow: 0 19px 38px transparentize($primary_bg_light, .85), 0 15px 12px transparentize($primary_bg_light, .93)
+
+		@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none)
+			background-color: transparentize($secondary_bg_light, .2)
+
+	.menu__item
+		border-bottom: .5px solid $border_light
+
+	.menu__theme-button
+		border-bottom: .5px solid $border_light
+
+
+	// > 1024px
+	@media #{$tablet_large}
+		.menu__wrap
+			border: none
+			background: none
+			box-shadow: none
+			backdrop-filter: none
+
+		.menu__list:after
+			background: $border_light
+
+		.menu__theme-button:after
+			background: $border_light
+
+		.menu__item
+			border: none
+			background: none
+
+		.menu__theme-button
+			border: none
+

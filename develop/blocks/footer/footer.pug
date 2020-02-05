@@ -1,0 +1,23 @@
+footer.footer-page
+	.footer-page__all-rights
+		span &copy; 2020 LintRC UI
+
+	.footer-page__menu
+		.footer-page__list
+			a.footer-page__link(href='./' title='Home Page') Home
+			a.footer-page__link(href='mailto:bio174@mail.ru?subject=LintRC' title='Write a letter' target='_blank') E-mail
+			a.footer-page__link(href='https://t.me/A_Magner' title='Написать в Telegram' target='_blank') Telegram
+			a.footer-page__link(href='https://github.com/lintrc-ui/develop' title='We are on GitHub' target='_blank') GitHub
+
+			include ../theme-button/theme-button
+			+themeButton('footer-page__theme-button', 'themeFooter')
+
+		.footer-page__list
+			a.footer-page__link(href='editorconfig.html') Editor Config
+			a.footer-page__link(href='htmlhintrc.html') HTML Hint
+			a.footer-page__link(href='puglintrc.html') Pug Linter
+			a.footer-page__link(href='stylelintrc.html') Style Lint
+			a.footer-page__link(href='sasslintrc.html') Sass Lint
+			a.footer-page__link(href='eslint.html') ESLint
+
+

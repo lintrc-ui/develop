@@ -32,7 +32,9 @@
 ::-webkit-scrollbar-corner
 	background: $primary_bg_dark
 
-*:focus
+*:focus,
+*:after:focus,
+*:before:focus
 	outline: none
 
 *,
@@ -53,7 +55,6 @@ textarea,
 select,
 button
 	font: inherit
-	color: #f00
 
 // скрытие input`ов
 .visually-hidden
@@ -111,6 +112,7 @@ body
 	body
 		font-size: $base_fontSize * 1.4
 
+
 pre code,
 code
 	font-family: 'JetBrains Mono', monospace
@@ -123,3 +125,23 @@ code
 	border: 1px solid $border_dark
 	background: $primary_bg_dark
 	box-shadow: 0 1px 5px $border_dark
+
+
+.is_light
+
+	// Дорожка для ползунка
+	::-webkit-scrollbar-track
+		background: $primary_bg_light
+		box-shadow: inset 0 0 5px transparentize($primary_fg_light, .7)
+
+	// Угол пересечения горизонтального и вертикального скролбара
+	::-webkit-scrollbar-corner
+		background: $primary_bg_light
+
+	body
+		color: $primary_fg_light
+
+	code
+		border: 1px solid $border_light
+		background: $primary_bg_light
+		box-shadow: 0 1px 5px $border_light

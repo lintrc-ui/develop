@@ -72,8 +72,8 @@ module.exports = () => {
 				logging: false,
 				appleStatusBarStyle: 'black-translucent',
 				loadManifestWithCredentials: true,
-				theme_color: '#fafafa',
-				background: '#00bcd4',
+				theme_color: '#fff',
+				background: '#263238',
 				icons: {
 					android: true,
 					appleIcon: true,

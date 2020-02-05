@@ -1,0 +1,20 @@
+.is_light
+
+	.theme-button__base
+		border: 1px solid $border_light
+		background: lighten($secondary_bg_light, 5%)
+
+	.theme-button__lever
+		border: .5px solid $border_light
+		background: $primary_bg_light
+		box-shadow: 0 1px 1px $secondary_fg_light
+
+
+	// > 1920px
+	@media #{$desktop_large}
+		.theme-button__base
+			border: 2px solid $border_light
+
+		.theme-button__lever
+			border: 1px solid $border_light
+			box-shadow: 0 2px 2px $secondary_fg_light

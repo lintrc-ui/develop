@@ -2,6 +2,7 @@
 @import 'main'
 @import '../blocks/header-page/header-page'
 @import '../blocks/tab-cards/tab-cards'
+@import '../blocks/footer/footer'
 
 .main-page
 	position: relative
@@ -9,6 +10,7 @@
 	padding-bottom: 3em
 	width: 100%
 	color: $primary_fg_dark
+	border-bottom: 1px solid $border_dark
 	background: $primary_bg_dark
 	overflow: hidden
 
@@ -16,24 +18,37 @@
 	display: flex
 	flex-flow: column nowrap
 	justify-content: center
-	align-items: center
-	padding: 3em 8%
+	align-items: flex-start
+	padding: 6em 8% 3em
 	width: 100%
-	height: 100vh
-	background: linear-gradient(to bottom, transparentize($secondary_bg_dark, .2), transparentize($secondary_bg_dark, .05)), url('https://d3irk3g7luh32r.cloudfront.net/wp-content/uploads/sites/5/2017/12/20170301155447.jpg') no-repeat fixed center /cover
+	border-bottom: 1px solid $border_dark
+	background: linear-gradient(to bottom, transparentize($secondary_bg_dark, .2), transparentize($secondary_bg_dark, .05)), url('../img/title-bg.jpg') no-repeat fixed center /cover
+	overflow: hidden
 
 .about__title
-	margin-bottom: 20px
-	font-size: 4em
+	position: relative
+	margin-bottom: 1.05em
+	max-width: 100%
+	font-size: 2.2em
 	font-weight: 700
 	line-height: 1.25
-	letter-spacing: .05em
-	text-transform: uppercase
-	text-align: center
+	letter-spacing: .07em
+	font-variant-caps: small-caps
+	text-align: left
 	text-shadow: 1px 2px 4px $primary_bg_dark, 0 0 2px $primary_fg_dark
 
+	&:before
+		content: ''
+		position: absolute
+		bottom: -.25em
+		left: 0
+		width: 3em
+		height: .1em
+		border-radius: 2px
+		background: $accent
+
 .about__text
-	margin-bottom: .7em
+	margin-bottom: 1.5em
 	font-size: 1em
 	font-weight: 400
 	font-variant: normal
@@ -48,16 +63,27 @@
 	width: 100%
 
 .about-lint__title
-	margin-bottom: .5em
-	font-size: 2.4em
+	margin-bottom: .8em
+	font-size: 2.2em
 	font-weight: 500
 	line-height: 1.25
+	text-align: center
 
+
+@media screen and (min-width: 414px)
+	.about__title
+		font-size: 2.8em
+
+// > 768
+@media #{$tablet_medium}
+	.about__title
+		max-width: 80%
+		font-size: 3.4em
 
 // > 1366px
 @media #{$desktop_medium}
 	.about
-		padding: 3em 12%
+		padding: 8em 12%
 
 	.about-lint
 		padding: 5em 8% 2em
@@ -65,7 +91,7 @@
 // > 1920px
 @media #{$desktop_large}
 	.about
-		padding: 3em 18%
+		padding: 8em 18% 3em
 
 	.about-lint
 		padding: 5em 12% 2em
@@ -73,7 +99,10 @@
 // > 2560px
 @media #{$desktop_xlarge}
 	.about
-		padding: 3em 24%
+		padding: 8em 24%
 
 	.about-lint
 		padding: 5em 18% 2em
+
+
+@import 'index_light'

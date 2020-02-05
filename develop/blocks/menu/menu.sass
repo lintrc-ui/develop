@@ -86,7 +86,7 @@
 	border-top-color: transparentize($primary_bg_dark, .1)
 	border-bottom-color: transparentize($primary_fg_dark, .9)
 	background-color: transparentize($primary_bg_dark, .04)
-	box-shadow: 0 19px 38px transparentize($primary_fg_dark, .85), 0 15px 12px transparentize($primary_fg_dark, .93)
+	box-shadow: 0 19px 38px transparentize($primary_bg_dark, .85), 0 15px 12px transparentize($primary_bg_dark, .93)
 	transition: opacity .3s ease, transform .3s ease
 	transform: translateX(100%)
 	overflow: hidden
@@ -204,3 +204,6 @@
 @media screen and (min-width: 1440px)
 	.menu__theme-button
 		display: inline-flex
+
+
+@import 'menu_light'

@@ -1,0 +1,24 @@
+.is_light
+
+	.tabs__content
+		border: 1px solid $border_light
+		background: $secondary_bg_light
+
+	.tabs__inline-link--active
+		color: $secondary_fg_light
+		border-bottom: 1px solid $secondary_fg_light
+
+	.tabs__text
+		color: $secondary_fg_light
+
+
+	@media #{$tablet_large}
+		.tabs__main-link
+			color: $secondary_fg_light
+			border: 1px solid $border_light
+			background: $primary_bg_light
+
+		.tabs__main-link--active
+			color: $primary_fg_light
+			border-right: 1px solid $secondary_bg_light
+			background: $secondary_bg_light
