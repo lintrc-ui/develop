@@ -3,7 +3,7 @@
 	.menu__check:checked ~ .menu__wrap-icon .menu__icon
 		background: transparentize($primary_fg_light, 1)
 
-	.menu__wrap
+	.menu__area
 		border-top-color: transparentize($primary_bg_light, .1)
 		border-bottom-color: transparentize($primary_fg_light, .9)
 		background-color: transparentize($primary_bg_light, .04)
@@ -21,7 +21,7 @@
 
 	// > 1024px
 	@media #{$tablet_large}
-		.menu__wrap
+		.menu__area
 			border: none
 			background: none
 			box-shadow: none

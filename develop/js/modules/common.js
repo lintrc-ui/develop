@@ -18,3 +18,10 @@ themeButtons.forEach(button => {
 		document.body.classList.toggle(classTheme);
 	});
 });
+
+// closing the menu by clicking outside the zone
+document.documentElement.addEventListener('click', el => {
+	if (!el.target.closest('.menu')) {
+		document.getElementById('menu').checked = false;
+	}
+});

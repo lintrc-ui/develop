@@ -15,6 +15,7 @@
 	overflow: hidden
 
 .about
+	position: relative
 	display: flex
 	flex-flow: column nowrap
 	justify-content: center
@@ -22,8 +23,19 @@
 	padding: 6em 8% 3em
 	width: 100%
 	border-bottom: 1px solid $border_dark
-	background: linear-gradient(to bottom, transparentize($secondary_bg_dark, .2), transparentize($secondary_bg_dark, .05)), url('../img/title-bg.jpg') no-repeat fixed center /cover
 	overflow: hidden
+	z-index: 1
+
+.about__bg
+	position: absolute
+	top: 0
+	left: 0
+	opacity: 1
+	width: 100%
+	height: 100%
+	background: linear-gradient(to bottom, transparentize($secondary_bg_dark, .25), $secondary_bg_dark), url('../img/title-bg.jpg') no-repeat fixed center /cover
+	filter: blur(9px)
+	z-index: 0
 
 .about__title
 	position: relative
@@ -34,14 +46,16 @@
 	line-height: 1.25
 	letter-spacing: .07em
 	font-variant-caps: small-caps
-	text-align: left
-	text-shadow: 1px 2px 4px $primary_bg_dark, 0 0 2px $primary_fg_dark
+	text-align: center
+	text-shadow: 1px 1px 2px $primary_bg_dark, 0 0 1px $primary_fg_dark
+	z-index: 1
 
 	&:before
 		content: ''
 		position: absolute
-		bottom: -.25em
-		left: 0
+		bottom: -.5em
+		left: 50%
+		transform: translateX(-50%)
 		width: 3em
 		height: .1em
 		border-radius: 2px
@@ -56,14 +70,18 @@
 	line-height: 1.6
 	text-transform: none
 	color: $secondary_fg_dark
+	z-index: 1
 
 .about-lint
 	margin: auto
-	padding: 5em 4% 2em
+	padding: 2em 4% 2em
 	width: 100%
 
 .about-lint__title
+	margin: auto
 	margin-bottom: .8em
+	width: 100%
+	max-width: 1100px
 	font-size: 2.2em
 	font-weight: 500
 	line-height: 1.25
@@ -79,6 +97,18 @@
 	.about__title
 		max-width: 80%
 		font-size: 3.4em
+		text-align: left
+
+		&:before
+			bottom: -.25em
+			left: 0
+			transform: translateX(0)
+
+	.about-lint
+		padding: 5em 4% 2em
+
+	.about-lint__title
+		text-align: left
 
 // > 1366px
 @media #{$desktop_medium}

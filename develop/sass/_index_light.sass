@@ -7,10 +7,14 @@
 
 	.about
 		border-bottom: 1px solid $border_light
-		background: linear-gradient(to bottom, transparentize($secondary_bg_light, .2), transparentize($secondary_bg_light, .05)), url('../img/title-bg.jpg') no-repeat fixed center /cover
+
+	.about__bg
+		opacity: .7
+		background: linear-gradient(to bottom, transparentize($secondary_bg_light, .8), $secondary_bg_light), url('../img/title-bg.jpg') no-repeat fixed center /cover
+		filter: blur(11px)
 
 	.about__title
-		text-shadow: 1px 2px 4px $primary_bg_light, 0 0 2px $primary_fg_light
+		text-shadow: none
 
 	.about__text
 		color: $secondary_fg_light

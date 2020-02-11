@@ -3,20 +3,21 @@
 	label.menu__wrap-icon(for='menu')
 		span.menu__icon
 
-	.menu__wrap
-		label.menu__close(for='menu')
-			svg.menu__img #[use(xlink:href='#close')]
+	.menu__area
+		.menu__wrap
+			label.menu__close(for='menu')
+				svg.menu__img #[use(xlink:href='#close')]
 
-		nav.menu__list
-			a.menu__item(href='editorconfig.html') Editor Config
-			a.menu__item(href='htmlhintrc.html') HTML Hint
-			a.menu__item(href='puglintrc.html') Pug Linter
-			a.menu__item(href='stylelintrc.html') Style Lint
-			a.menu__item(href='sasslintrc.html') Sass Lint
-			a.menu__item(href='eslint.html') ESLint
+			nav.menu__list
+				a.menu__item(href='editorconfig.html') Editor Config
+				a.menu__item(href='htmlhintrc.html') HTML Hint
+				a.menu__item(href='puglintrc.html') Pug Linter
+				a.menu__item(href='stylelintrc.html') Style Lint
+				a.menu__item(href='sasslintrc.html') Sass Lint
+				a.menu__item(href='eslint.html') ESLint
 
-		include ../theme-button/theme-button
-		+themeButton('menu__theme-button', 'themeMenu')
+			include ../theme-button/theme-button
+			+themeButton('menu__theme-button', 'themeMenu')
 
-		include ../social/social
-		+social('menu__social')
+			include ../social/social
+			+social('menu__social')
